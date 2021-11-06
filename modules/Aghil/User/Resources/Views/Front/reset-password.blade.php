@@ -6,7 +6,7 @@
             <img src="img/weblogo.png" alt="">
         </a>
         <div class="card-header">
-            <p class="activation-code-title">کد فرستاده شده به ایمیل <span>Mohammadniko3@gmail.com</span>
+            <p class="activation-code-title">کد فرستاده شده به ایمیل <span>aghilpadash73@gmail.com</span>
                 را وارد کنید . ممکن است ایمیل به پوشه spam فرستاده شده باشد
             </p>
         </div>
