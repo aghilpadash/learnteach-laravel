@@ -30,6 +30,7 @@
       "App\\": "app/",
       "Aghil\\User\\": "modules/Aghil/User",
       "Aghil\\Dashboard\\": "modules/Aghil/Dashboard",
+      "Aghil\\Category\\": "modules/Aghil/Category",
       "Database\\Factories\\": "database/factories/",
       "Database\\Seeders\\": "database/seeders/"
     }

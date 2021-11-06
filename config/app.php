@@ -163,6 +163,7 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Aghil\User\Providers\UserServiceProvider::class,
         Aghil\Dashboard\Providers\DashboardServiceProvider::class,
+        Aghil\Category\Providers\CategoryServiceProvider::class,
 
         /*
          * Package Service Providers...
