@@ -30,4 +30,20 @@ class CategoryController extends Controller
         $categories = Category::all();
         return view('Categories::edit', compact('category', 'categories'));
     }
+
+    public function update(CategoryRequest $request, Category $category)
+    {
+        $category->update([
+            'title' => $request->title,
+            'slug' => $request->slug,
+            'parent_id' => $request->parent_id,
+        ]);
+        return back();
+    }
+
+    public function destroy(Category $category)
+    {
+//        $category->delete();
+        return response()->json(['message' => 'عملیات با موفقیت انجام شد.'], status: \Illuminate\Http\Response::HTTP_OK);
+    }
 }
