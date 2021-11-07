@@ -4,46 +4,49 @@ namespace Aghil\Category\Http\Controllers;
 
 use Aghil\Category\Http\Requests\CategoryRequest;
 use Aghil\Category\Models\Category;
+use Aghil\Category\Repositories\CategoryRepo;
+use Aghil\Category\Responses\AjaxResponses;
 use App\Http\Controllers\Controller;
 
 
 class CategoryController extends Controller
 {
+    public $repo;
+
+    public function __construct(CategoryRepo $categoryRepo)
+    {
+        $this->repo = $categoryRepo;
+    }
+
     public function index()
     {
-        $categories = Category::all();
+        $categories = $this->repo->all();
+
         return view('Categories::index', compact('categories'));
     }
 
     public function store(CategoryRequest $request)
     {
-        Category::create([
-            'title' => $request->title,
-            'slug' => $request->slug,
-            'parent_id' => $request->parent_id,
-        ]);
+        $this->repo->store($request);
         return back();
     }
 
-    public function edit(Category $category)
+    public function edit($categoryId)
     {
-        $categories = Category::all();
+        $category = $this->repo->findById($categoryId);
+        $categories = $this->repo->allExceptByIds($categoryId);
         return view('Categories::edit', compact('category', 'categories'));
     }
 
-    public function update(CategoryRequest $request, Category $category)
+    public function update($categoryId, CategoryRequest $request)
     {
-        $category->update([
-            'title' => $request->title,
-            'slug' => $request->slug,
-            'parent_id' => $request->parent_id,
-        ]);
+        $this->repo->update($categoryId, $request);
         return back();
     }
 
-    public function destroy(Category $category)
+    public function destroy($categoryId)
     {
-//        $category->delete();
-        return response()->json(['message' => 'عملیات با موفقیت انجام شد.'], status: \Illuminate\Http\Response::HTTP_OK);
+        $this->repo->delete($categoryId);
+        return AjaxResponses::SuccessResponse();
     }
 }
