@@ -19,7 +19,7 @@
                     @foreach($categories as $category)
                         <tr role="row" class="data-row">
                             <td>{{$category->id}}</td>
-                            <td>{{$category->name}}</td>
+                            <td>{{$category->title}}</td>
                             <td>{{$category->slug}}</td>
                             <td>{{$category->parent}}</td>
                             <td>
