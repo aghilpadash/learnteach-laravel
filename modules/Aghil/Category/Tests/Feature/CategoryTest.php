@@ -49,7 +49,7 @@ class CategoryTest extends TestCase
 
     private function actionAsAdmin()
     {
-        $this->actingAs(factory(User::class)->create());
+        $this->actingAs((User::factory()->make()));
     }
 
     private function createCategory()
