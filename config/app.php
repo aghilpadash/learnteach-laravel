@@ -161,9 +161,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        Aghil\User\Providers\UserServiceProvider::class,
-        Aghil\Dashboard\Providers\DashboardServiceProvider::class,
-        Aghil\Category\Providers\CategoryServiceProvider::class,
+
 
         /*
          * Package Service Providers...
@@ -178,6 +176,10 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+
+        Aghil\User\Providers\UserServiceProvider::class,
+        Aghil\Dashboard\Providers\DashboardServiceProvider::class,
+        Aghil\Category\Providers\CategoryServiceProvider::class,
 
 
     ],
