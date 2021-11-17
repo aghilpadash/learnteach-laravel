@@ -180,6 +180,7 @@ return [
         Aghil\User\Providers\UserServiceProvider::class,
         Aghil\Dashboard\Providers\DashboardServiceProvider::class,
         Aghil\Category\Providers\CategoryServiceProvider::class,
+        Aghil\RolePermissions\Providers\RolePermissionsServiceProvider::class,
 
 
     ],
